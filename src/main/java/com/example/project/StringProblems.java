@@ -10,7 +10,9 @@ public class StringProblems{
     // endsLy("oddy") → false
     public boolean endsLy(String x){
             //implement code here
-
+        if (x.indexOf("ly") != -1){
+            return true;
+        }
         return false;
     }
 
@@ -22,8 +24,15 @@ public class StringProblems{
     // conCat("dog", "cat") → "dogcat"
     // conCat("abc", "") → "abc"
     public String conCat(String s1, String s2){
-     
-        return "";
+        String end = s1.substring((s1.length() - 1) , s1.length());
+        if(s2.equals("")){
+            return s1 + "";
+        }
+        
+        if (end.equals(s2.substring(0, 1))){
+            return s1.substring(0, s1.length() - 1) + s2.substring(0);
+        }
+        return s1 + s2;
     }
 
     // Given a string, return a version without the first 2 chars. 
@@ -38,7 +47,10 @@ public class StringProblems{
     //deFront("a") -> "a"
     //deFront("ba") -> ""
     public String deFront(String s1){
-           
+        if (s1.substring(0,1).equals("a")){
+            return s1.substring(1);
+        } 
+        s1.substring(3);
         return "";
     }
 
